@@ -19,22 +19,93 @@ namespace ConversionesApp
        
         private void Metros_Clicked(object sender, EventArgs e)
         {
-            float numero = float.Parse(cantidad.Text);
+            if (cantidad != null && !string.IsNullOrWhiteSpace(cantidad.Text))
+            {
+                float numero = float.Parse(cantidad.Text);
 
-            peticion.PedirComunicacion("api/Conversiones/Metro?cantidad=" + numero, MetodoHTTP.GET,TipoContenido.JSON);
-            string respuestaJson = peticion.ObtenerJson();
-            DisplayAlert("Resultado", respuestaJson, "Aceptar");
-
+                peticion.PedirComunicacion("api/Conversiones/MetroCM?cantidad=" + numero, MetodoHTTP.GET, TipoContenido.JSON);
+                string respuestaJson = peticion.ObtenerJson();
+                DisplayAlert("Resultado", respuestaJson, "Aceptar");
+            }
+            else
+            {
+                DisplayAlert("Error", "Por favor ingresa un valor", "OK");
+            }
         }
 
         private void Centimetros_Clicked(object sender, EventArgs e)
         {
-            float numero = float.Parse(cantidad.Text);
-            peticion.PedirComunicacion("api/Conversiones/Centimetros?cantidad=" + numero, MetodoHTTP.GET, TipoContenido.JSON);
-            string respuestaJson = peticion.ObtenerJson();
-            DisplayAlert("Resultado", respuestaJson, "Aceptar");
-
+            if (cantidad != null && !string.IsNullOrWhiteSpace(cantidad.Text))
+            {
+                float numero = float.Parse(cantidad.Text);
+                peticion.PedirComunicacion("api/Conversiones/CentimetrosM?cantidad=" + numero, MetodoHTTP.GET, TipoContenido.JSON);
+                string respuestaJson = peticion.ObtenerJson();
+                DisplayAlert("Resultado", respuestaJson, "Aceptar");
+            }
+            else
+            {
+                DisplayAlert("Error", "Por favor ingresa un valor", "OK");
+            }
         }
 
+        private void MetrosP_Clicked(object sender, EventArgs e)
+        {
+            if (cantidad != null && !string.IsNullOrWhiteSpace(cantidad.Text))
+            {
+                float numero = float.Parse(cantidad.Text);
+                peticion.PedirComunicacion("api/Conversiones/MetroP?cantidad=" + numero, MetodoHTTP.GET, TipoContenido.JSON);
+                string respuestaJson = peticion.ObtenerJson();
+                DisplayAlert("Resultado", respuestaJson, "Aceptar");
+            }
+            else
+            {
+                DisplayAlert("Error", "Por favor ingresa un valor", "OK");
+            }
+        }
+
+        private void CentimetrosP_Clicked(object sender, EventArgs e)
+        {
+            if (cantidad != null && !string.IsNullOrWhiteSpace(cantidad.Text))
+            {
+                float numero = float.Parse(cantidad.Text);
+                peticion.PedirComunicacion("api/Conversiones/CentimetrosP?cantidad=" + numero, MetodoHTTP.GET, TipoContenido.JSON);
+                string respuestaJson = peticion.ObtenerJson();
+                DisplayAlert("Resultado", respuestaJson, "Aceptar");
+            }
+            else
+            {
+                DisplayAlert("Error", "Por favor ingresa un valor", "OK");
+            }
+        }
+
+        private void PulgadasCM_Clicked(object sender, EventArgs e)
+        {
+            if (cantidad != null && !string.IsNullOrWhiteSpace(cantidad.Text))
+            {
+                float numero = float.Parse(cantidad.Text);
+                peticion.PedirComunicacion("api/Conversiones/PulgadaCM?cantidad=" + numero, MetodoHTTP.GET, TipoContenido.JSON);
+                string respuestaJson = peticion.ObtenerJson();
+                DisplayAlert("Resultado", respuestaJson, "Aceptar");
+            }
+            else
+            {
+                DisplayAlert("Error", "Por favor ingresa un valor", "OK");
+            }
+        }
+
+        private void PulgadasM_Clicked(object sender, EventArgs e)
+        {
+            if (cantidad != null && !string.IsNullOrWhiteSpace(cantidad.Text))
+            {
+                float numero = float.Parse(cantidad.Text);
+                peticion.PedirComunicacion("api/Conversiones/PulgadaM?cantidad=" + numero, MetodoHTTP.GET, TipoContenido.JSON);
+                string respuestaJson = peticion.ObtenerJson();
+                DisplayAlert("Resultado", respuestaJson, "Aceptar");
+            }
+            else
+            {
+                DisplayAlert("Error", "Por favor ingresa un valor", "OK");
+            }
+        }
     }
 }
